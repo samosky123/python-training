@@ -1,0 +1,17 @@
+---
+hostname: ARISTA01
+loopback0:
+  ip: 10.10.10.1
+  cidr: 10.10.10.1/32
+  mask: 255.255.255.255
+
+management:
+  ip: 192.168.56.1
+  cidr: 192.168.56.11/24
+  mask: 255.255.255.0
+
+default_gateway:
+  ip: 192.168.56.251  
+  cidr: 192.168.56.251/24  
+  mask: 255.255.255.0 
+

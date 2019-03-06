@@ -1,0 +1,2 @@
+mac             port          vlan   age
+0080:2101:cd07  Eth1/1        2200   55

@@ -1,0 +1,39 @@
+! Command: show running-config
+! device: EEEE (vEOS, EOS-4.18.5M)
+!
+! boot system flash:/vEOS-lab.swi
+!
+transceiver qsfp default-mode 4x10G
+!
+logging buffered 20000 informational
+logging console informational
+logging facility local7
+logging source-interface Management1
+!
+hostname EEEE
+ip domain-name evolvere-tech.co.uk
+!
+spanning-tree mode rstp
+!
+enable secret sha512 $6$ZXqLkp2FLVt4UmrE$Zd9WQpxZuiwXqgGgODEl5gY8eatjDus2b0DQvhGL0yr6/f12vgawzVl8nJv2I7jAjtn2/fkuMnqBnayM8yVcQ1
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$x8H/cKvzp9YjfK2Q$nsOjlQKaJd62IZbT9YdSe5sDW3OXMkWPfbQlH03eiK3ieyMfFwBoxIVSXFv/GXkv5OSu.H.k5qDJvfThQkv0E/
+!
+clock timezone GB
+!
+vlan 100
+!
+interface Management1
+   description Management_Interface
+   ip address 192.168.56.1/24
+!
+ip route 0.0.0.0/0 192.168.56.251
+!
+no ip routing
+!
+management api http-commands
+   protocol http
+   no shutdown
+!
+end

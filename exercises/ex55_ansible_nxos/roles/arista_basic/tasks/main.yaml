@@ -1,0 +1,11 @@
+---
+- name: Apply ARISTA_BASIC configuration
+  template:
+    src: ARISTA_BASIC.j2
+    dest: configs/basic_nxos
+    #provider: "{{ eapi }}"
+    #replace: line
+    #backup: yes
+- name: Apply ARISTA_BASIC configuration
+  nxos_config:
+    src: configs/basic_nxos

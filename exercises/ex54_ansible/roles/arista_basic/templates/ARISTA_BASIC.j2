@@ -1,0 +1,34 @@
+! ARISTA_BASIC.j2
+!
+!
+logging buffered 20000 informational
+logging console informational
+logging facility local7
+logging source-interface Management1
+!
+hostname {{ hostname }}
+ip domain-name evolvere-tech.co.uk
+!
+spanning-tree mode rstp
+!
+!
+username admin privilege 15 role network-admin secret admin
+!
+clock timezone GB
+!
+!
+interface Loopback0
+   description *** Switch Management ***
+   ip address {{ loopback0["cidr"] }}
+!
+interface Management1
+   ip address {{ management["cidr"] }}
+!
+ip route 0.0.0.0/0 {{ default_gateway["ip"] }}
+!
+!
+management api http-commands
+   protocol http
+   no shutdown
+!
+!

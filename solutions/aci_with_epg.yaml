@@ -1,0 +1,37 @@
+name: Configure ACI
+apic: sandboxapicdc.cisco.com
+user: admin
+tasks:
+    - name: Configure Tenant
+      tn: add
+      vars:
+         tn_name: Evolvere_TN
+
+    - name: Configure Application Profile
+      ap: add
+      vars:
+         tn_name: Evolvere_TN
+         ap_name: Evolvere_AP
+
+    - name: Configure VRF
+      vrf: add
+      vars:
+        tn_name: Evolvere_TN
+        vrf_name: Red_VRF
+
+    - name: Configure BD
+      bd: add
+      vars:
+         tn_name: Evolvere_TN
+         vrf_name: Red_VRF
+         bd_name: VLAN2000
+
+    - name: Configure EPG
+      epg: add
+      vars:
+         tn_name: Evolvere_TN
+         ap_name: Evolvere_AP
+         bd_name: VLAN2000
+         epg_name: VLAN2000
+         pd_name: Evolvere_Phys_Dom
+

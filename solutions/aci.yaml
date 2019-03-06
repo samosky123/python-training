@@ -1,0 +1,20 @@
+name: Configure ACI
+apic: sandboxapicdc.cisco.com
+user: admin
+tasks:
+    - name: Configure Tenant
+      tn: add
+      vars:
+         tn_name: Evolvere_TN
+
+    - name: Configure Application Profile
+      ap: add
+      vars:
+         tn_name: Evolvere_TN
+         ap_name: Evolvere_APP
+
+    - name: Configure VRF
+      vrf: add
+      vars:
+        tn_name: Evolvere_TN
+        vrf_name: Red_VRF
