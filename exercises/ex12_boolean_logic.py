@@ -8,8 +8,8 @@ for vlan in vlans:
     if vlan > 100:
         big_vlan = True
     if big_vlan:
-        print "VLAN", vlan, "and we have seen a vlan > 100"
+        print("VLAN", vlan, "and we have seen a vlan > 100")
     else:
-        print "VLAN", vlan, "and not yet seen a vlan > 100"
+        print("VLAN", vlan, "and not yet seen a vlan > 100")
 #
 

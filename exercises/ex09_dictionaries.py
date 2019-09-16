@@ -10,7 +10,7 @@ arp_table = [{'mac': '0080:2101:cd07', 'ip': '10.10.197.8', 'age': '22'},
 search = '005e:97b2:0854'
 for entry in arp_table:
     if entry['mac'] == search:
-        print 'IP:', entry['ip'], 'MAC:', entry['mac']
+        print('IP:', entry['ip'], 'MAC:', entry['mac'])
 
 
 # arp_table as dictionary of dictionaries
@@ -22,10 +22,10 @@ arp_table = {'0080:2101:cd07': {'ip': '10.10.197.8', 'age': '22'},
             }
 
 search = '005e:97b2:0854'
-print 'IP:', arp_table[search]['ip'], 'MAC:', search
+print('IP:', arp_table[search]['ip'], 'MAC:', search)
 
 for mac in arp_table:
-    print 'IP:', arp_table[mac]['ip'], 'MAC:', mac
+    print('IP:', arp_table[mac]['ip'], 'MAC:', mac)
 
 
 # exercise

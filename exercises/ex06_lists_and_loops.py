@@ -22,6 +22,6 @@ for switch in switches:
     # switch_number is last two characters of the suffix
     switch_number = suffix[-2:]
     
-    print '{0}: DC:{1} FUNC:{2} NUMBER:{3}'.format(switch, dc_code, switch_function, switch_number)
+    print('{0}: DC:{1} FUNC:{2} NUMBER:{3}'.format(switch, dc_code, switch_function, switch_number))
 
-print len(switches), 'in switch list.'
+print(len(switches), 'in switch list.')

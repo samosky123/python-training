@@ -7,13 +7,13 @@ s3 = ['chc1-a02', 'N9K-C93128TX', 'n9000-12.0(1q)']
 
 switches = [s1, s2, s3]
 
-print switches
+print(switches)
 
 for switch in switches:
-    print 'Name:', switch[0]
-    print 'Type:', switch[1]
-    print 'Version:', switch[2]
-    print '+------------------------------------------------------------+'
+    print('Name:', switch[0])
+    print('Type:', switch[1])
+    print('Version:', switch[2])
+    print('+------------------------------------------------------------+')
 
 # Using a dictionary
 
@@ -26,10 +26,10 @@ switches = [s1, s2, s3]
 #print switches
 
 for switch in switches:
-    print 'Name:', switch['name']
-    print 'Type:', switch['type']
-    print 'Version:', switch['version']
-    print '+------------------------------------------------------------+'
+    print('Name:', switch['name'])
+    print('Type:', switch['type'])
+    print('Version:', switch['version'])
+    print('+------------------------------------------------------------+')
 
 
 # List of dictionaries is very common structure

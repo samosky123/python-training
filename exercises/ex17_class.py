@@ -10,10 +10,10 @@ class Switch():
         self.sw_version = sw_version
 
     def print_switch(self):
-        print 'Name:', self.name
-        print 'Type:', self.hw_type
-        print 'Version:', self.sw_version
-        print '+------------------------------------------------------------+'
+        print('Name:', self.name)
+        print('Type:', self.hw_type)
+        print('Version:', self.sw_version)
+        print('+------------------------------------------------------------+')
         return
 
 if __name__ == '__main__':

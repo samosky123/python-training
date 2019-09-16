@@ -9,10 +9,10 @@ def switch(name, hw_type, sw_version):
 
 
 def print_switch(switch):
-    print 'Name:', switch['name']
-    print 'Type:', switch['hw_type']
-    print 'Version:', switch['sw_version']
-    print '+------------------------------------------------------------+'
+    print('Name:', switch['name'])
+    print('Type:', switch['hw_type'])
+    print('Version:', switch['sw_version'])
+    print('+------------------------------------------------------------+')
     return
 # When run as python script __name__ == '__main__'
 # When run as import, __name__ == <import script name>

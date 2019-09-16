@@ -7,33 +7,33 @@ data_out = ["mac             port          vlan   age",
             "0080:2101:cd07  Eth1/1        2200   55" ]
 
 
-file = open("mac_table.txt", "w")
+f = open("mac_table.txt", "w")
 for line in data_out:
-    file.write(line)
-    file.write('\n')
-file.close()
+    f.write(line)
+    f.write('\n')
+f.close()
 
 # Read a file
-file = open("mac_table.txt", "r")
-for line in file:
-    print line
+f = open("mac_table.txt", "r")
+for line in f:
+    print(line)
 
 # New style
-with open('mac_table.txt') as file:
-    for line in file:
-        print line
+with open('mac_table.txt') as f:
+    for line in f:
+        print(line)
 
 # What if file does not exist?
 try:
-    with open('mic_table.txt') as file:
-        print file.readlines()
+    with open('mic_table.txt') as f:
+        print(f.readlines()
 except:
     print "Error opening file"
 
 # Read filename from keyboard
 filename = raw_input('Filename:')
-with open(filename) as file:
-    text_lines = file.readlines()
+with open(filename) as f:
+    text_lines = f.readlines()
     for text in text_lines:
         print text
 

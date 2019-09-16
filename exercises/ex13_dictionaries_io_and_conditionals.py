@@ -16,8 +16,8 @@
 interface_stats = {}
 rx = True
 
-with open('show_interface_small.txt', 'r') as file:
-    for line in file:
+with open('show_interface_small.txt', 'r') as f:
+    for line in f:
 
         if line.startswith('Ethernet'):
             interface_name = line.split(' ')[0]
@@ -48,4 +48,4 @@ with open('show_interface_small.txt', 'r') as file:
 #print interface_stats
 
 for interface,stats in interface_stats.iteritems():
-    print interface, 'STATE:', stats['state'], 'IN_PKTS:', stats['in_pkts']
+    print(interface, 'STATE:', stats['state'], 'IN_PKTS:', stats['in_pkts'])

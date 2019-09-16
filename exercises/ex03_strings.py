@@ -5,16 +5,16 @@
 
 switch1 = 'core_sw_01'
 
-print 'I have configured', switch1
+print('I have configured', switch1)
 
 another_switch = 'core_sw_02'
 
-print 'WARNING: Switches', switch1, 'and', another_switch, 'configured.'
+print('WARNING: Switches', switch1, 'and', another_switch, 'configured.')
 
 # Concatenate (join) strings with +
 
 msg = 'WARNING: Switches ' + switch1 + ' and ' + another_switch + ' configured.'
-print msg
+print(msg)
 
 """
 The string "ukdc1-asw01" has eleven characters,

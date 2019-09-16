@@ -11,7 +11,7 @@ switches = [s1, s2, s3]
 #print switches
 
 for switch in switches:
-    print 'Name:', switch['name']
-    print 'Type:', switch['type']
-    print 'Version:', switch['version']
-    print '+------------------------------------------------------------+'
+    print('Name:', switch['name'])
+    print('Type:', switch['type'])
+    print('Version:', switch['version'])
+    print('+------------------------------------------------------------+')
