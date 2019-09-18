@@ -53,4 +53,4 @@ for interface in data:
     result = db.interfaces.insert({'switch': switch_name, 'interface_name': interface_name,
                                    'state': state, 'duplex': duplex, 'speed': speed, 'updated': datetime.datetime.now()})
 
-    print result
+    print('Result:', result)

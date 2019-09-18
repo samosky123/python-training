@@ -5,8 +5,8 @@ from time import sleep
 
 
 def main():
-    device = raw_input('Device hostname or IP address: ')
-    username = raw_input('Username: ')
+    device = input('Device hostname or IP address: ')
+    username = input('Username: ')
     password = getpass.getpass('Password: ')
 
     if device and username and password:
@@ -34,15 +34,18 @@ def main():
 
         while True:
             if device_shell.recv_ready():
-                prompt = device_shell.recv(9999).split('\n')[-1]
+                prompt = device_shell.recv(9999).decode('utf-8').split('\n')[-1]
                 break
 
         device_shell.send('show ver\n')
         output = ''
-        while True:
+        i = 0
+        while i < 10:
+            sleep(0.5)
+
             if device_shell.recv_ready():
 
-                output += device_shell.recv(9999)
+                output += device_shell.recv(9999).decode('utf-8')
 
                 if output.endswith(prompt):
                     break
@@ -55,10 +58,10 @@ def main():
             # print line
             if 'Software image' in line:
                 eos = line.split(':')[1].strip()
-                print 'Software version:', eos
+                print('Software version:', eos)
 
     else:
-        print 'No device, username or password provided'
+        print('No device, username or password provided')
         sys.exit(1)
 
 if __name__ == '__main__':

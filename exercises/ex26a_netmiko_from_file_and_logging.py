@@ -15,7 +15,7 @@ def main():
     parser.add_argument("-output_log", help="Output log, by default stored in output.log", default='output_log')
 
     args = parser.parse_args()
-    print args
+    print('Args:\n', args)
 
     if not args.device and not args.config_file:
         sys.exit('ERROR: Script expects device and configuration file.')
@@ -25,14 +25,14 @@ def main():
         with open(args.config_file, 'r') as config_file:
             config = config_file.readlines()
 
-        print datetime.datetime.now(), 'Connecting to device'
+        print(datetime.datetime.now(), 'Connecting to device')
         ssh = netmiko.ConnectHandler(device_type='cisco_nxos', ip=args.device, username='admin', 
                                      global_delay_factor=0.1, password='admin', timeout=10)
 
         ssh.enable()
 
         ssh.config_mode()
-        print datetime.datetime.now(), 'Configuring device'
+        print(datetime.datetime.now(), 'Configuring device')
         output = ''
         for cmd in config:
             if cmd and not cmd.startswith('!'):
@@ -40,7 +40,7 @@ def main():
                                            delay_factor = 0.1, strip_command=False, strip_prompt=False)
         #output = ssh.send_config_from_file(args.config_file, delay_factor=0)
 
-        print datetime.datetime.now(), 'Configured device'        
+        print(datetime.datetime.now(), 'Configured device')
        
          
         with open(args.output_log, 'w') as outfile:

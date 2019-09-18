@@ -28,14 +28,14 @@ try:
     with open('mic_table.txt') as f:
         print(f.readlines()
 except:
-    print "Error opening file"
+    print("Error opening file")
 
 # Read filename from keyboard
-filename = raw_input('Filename:')
+filename = input('Filename:')
 with open(filename) as f:
     text_lines = f.readlines()
     for text in text_lines:
-        print text
+        print(text)
 
 # exercise
 # Use try/except to deal with no such file errors

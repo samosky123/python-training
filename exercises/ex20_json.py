@@ -79,13 +79,13 @@ output_json = '''
 intf_dict = json.loads(output_json)
 
 # Print dictionary, loaded from JSON output
-print 'Loaded Dictionary:', intf_dict
+print('Loaded Dictionary:', intf_dict)
 
 i = 0
 for intf in intf_dict['TABLE_intf']:
 
-    print 'Interface: ', intf['ROW_intf']['intf-name'], ',', 'VRF: ',\
-        intf_dict['TABLE_vrf'][i]['ROW_vrf']['vrf-name-out']
+    print('Interface: ', intf['ROW_intf']['intf-name'], ',', 'VRF: ',\
+        intf_dict['TABLE_vrf'][i]['ROW_vrf']['vrf-name-out'])
     i += 1
 
 # Exercise:

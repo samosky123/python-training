@@ -14,35 +14,45 @@ output = '''
       }
 '''
 
-print "Example of matching exact string"
+print("Example of matching exact string")
 p = re.compile('192.168.22.251')
 response = p.search(output)
 if response:
-    print response.group(), response.span()
+    print(response.group(), response.span())
 
-print "Example using re.match"
-p = re.compile('192.168.22.251')
+print("Example using re.match")
+re_string = '192.168.22.251'
+print("Regex string: {0}".format(re_string))
+p = re.compile(re_string)
 response = p.match(output)
 if response:
-    print response.group(), response.span()
+    print(response.group(), response.span())
 
-print "Example of matching substring and returning an iterator"
+print("Example of matching substring and returning an iterator")
+re_string = '\d*\.\d*\.\d*\.\d*'
+print("Regex string: {0}".format(re_string))
 response = re.finditer('\d*\.\d*\.\d*\.\d*', output)
 if response:
     for item in response:
-        print item.group(), item.span()
+        print(item.group(), item.span())
 
-print "Example of matching all substrings and returning them in a list"
-response = re.findall('\d*\.\d*\.\d*\.\d*', output)
-print response
+print("Example of matching all substrings and returning them in a list")
+re_string = '\d*\.\d*\.\d*\.\d*'
+print("Regex string: {0}".format(re_string))
+response = re.findall(re_string, output)
+print(response)
 
-print "Example of alternative expression for IP address and IP address with prefix"
+print("Example of alternative expression for IP address and IP address with prefix")
+re_string = '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\/?[0-9]{1,2}'
+print("Regex string: {0}".format(re_string))
 response = re.findall('[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\/?[0-9]{1,2}', output)
-print response
+print(response)
 
-print "Example of string replacement with Regex"
-p = re.compile('\d*\.\d*\.\d*\.\d*')
-print p.subn('192.168.22.251', output, count=0)
+print("Example of string replacement with Regex")
+re_string = '\d*\.\d*\.\d*\.\d*'
+print("Regex string: {0}".format(re_string))
+p = re.compile(re_string)
+print(p.subn('192.168.22.251', output, count=0))
 
 # Exercise:
 # 1. Split string into lines

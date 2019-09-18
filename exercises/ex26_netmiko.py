@@ -1,11 +1,14 @@
+# Script connects to Arista switch via SSH, collects output of 'show ver' and prints
+# OS version
+
 from netmiko.arista import AristaSSH
 import getpass
 import sys
 
 
 def main():
-    device = raw_input('Device hostname or IP address: ')
-    username = raw_input('Username: ')
+    device = input('Device hostname or IP address: ')
+    username = input('Username: ')
     password = getpass.getpass('Password: ')
 
     if device and username and password:
@@ -19,16 +22,14 @@ def main():
 
         output_line_list = output.split('\n')
 
-        print output_line_list
-
         for line in output_line_list:
 
             if 'Software image' in line:
                 eos = line.split(':')[1].strip()
-                print 'Software version:', eos
+                print('Software version:', eos)
 
     else:
-        print 'No device, username or password provided'
+        print('No device, username or password provided')
         sys.exit(1)
 
 if __name__ == '__main__':

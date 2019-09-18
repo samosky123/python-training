@@ -43,5 +43,5 @@ response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(s
 
 software_version = response['result']['body']['sys_ver_str']
 
-print "Software Version:", software_version
+print("Software Version:", software_version)
 

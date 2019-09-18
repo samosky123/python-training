@@ -78,10 +78,10 @@ def cdp_xml_parser():
     # Print local interface, device_id, remote_interface
 
     template = '{0:15} | {1:15} | {2:15}'
-    print template.format('Local Port', 'Neighbor', 'Remote Port')
-    print ('----------------+-----------------+---------------')
+    print(template.format('Local Port', 'Neighbor', 'Remote Port'))
+    print('----------------+-----------------+---------------')
     for cdp_nbr in cdp_nbr_list:
-        print template.format(cdp_nbr['intf_id'], cdp_nbr['device_id'].split('(')[0], cdp_nbr['port_id'])
+        print(template.format(cdp_nbr['intf_id'], cdp_nbr['device_id'].split('(')[0], cdp_nbr['port_id']))
 
 
 if __name__ == '__main__':

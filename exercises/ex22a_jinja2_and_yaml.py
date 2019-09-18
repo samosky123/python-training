@@ -1,6 +1,7 @@
 import yaml
 import jinja2
 
+output_file = 'config_file.txt'
 
 jinja2_template = """
 {% for interface in interfaces -%}
@@ -30,17 +31,19 @@ interfaces:
 
 template = jinja2.Template(jinja2_template)
 
-print yaml.load(settings)
+settings_dict = yaml.load(settings, Loader=yaml.FullLoader)
 
-output = template.render(yaml.load(settings))
+print('Loaded YAML Settings:\n', settings_dict)
 
-print output
+output = template.render(settings_dict)
 
-out_file = open('config_file.txt', 'w')
+print('Rendered Config:\n', output)
 
-out_file.write(output)
+print('Saving Config in file {0}.'.format(output_file))
 
-out_file.close()
+with open(output_file, 'w') as ofile:
+
+    ofile.write(output)
 
 # Exercise:
 # Create new Jinja2 template to configure Interface description and IP address with mask or prefix

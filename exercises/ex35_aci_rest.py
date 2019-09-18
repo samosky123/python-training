@@ -22,7 +22,7 @@ def aci_add_tenant(tn, descr, s, headers, cookie):
               }
 
     response = s.post(uri, data=json.dumps(payload), headers=headers, cookies=cookie, verify=False)
-    print response
+    print('Response:', response)
     return
 
 def main():

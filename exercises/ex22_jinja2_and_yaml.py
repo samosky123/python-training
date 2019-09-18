@@ -26,11 +26,12 @@ snmp:
 
 template = jinja2.Template(jinja2_template)
 
-print yaml.load(settings)
+settings_dict = yaml.load(settings, Loader=yaml.FullLoader)
+print('Loaded YAML:', settings_dict)
 
-output = template.render(yaml.load(settings))
+output = template.render(settings_dict)
 
-print output
+print('Rendered Config:\n', output)
 
 # Exercise:
 # Create new Jinja2 template to configure Interface description and IP address with mask or prefix

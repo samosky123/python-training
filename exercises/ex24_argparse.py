@@ -17,16 +17,16 @@ def func():
     args = args_parser()
     
     if not args.device or not args.op:
-        print 'ERROR: Device and Operation must be provided'
+        print('ERROR: Device and Operation must be provided')
         sys.exit(1)
 
     if args.v:
-        print 'Device:', args.device
-        print 'Operation:', args.op
-        print 'Verbose:', args.v
-        print '\n'
+        print('Device:', args.device)
+        print('Operation:', args.op)
+        print('Verbose:', args.v)
+        print('\n')
 
-    print 'Processing Device: {0}, Operation: {1}'.format(str(args.device), args.op)
+    print('Processing Device: {0}, Operation: {1}'.format(str(args.device), args.op))
 
 if __name__ == '__main__':
     func()
