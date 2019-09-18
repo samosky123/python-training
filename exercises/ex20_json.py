@@ -76,7 +76,7 @@ output_json = '''
 }
 '''
 
-intf_dict = json.loads(output_json)
+intf_dict = json.loads(output_json, strict=False)
 
 # Print dictionary, loaded from JSON output
 print('Loaded Dictionary:', intf_dict)
