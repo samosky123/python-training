@@ -1,0 +1,8 @@
+---
+hostname: evo-eos01
+mgmt_vrf: MGMT
+ntp_servers:
+  -  0.uk.pool.ntp.org
+  -  1.uk.pool.ntp.org
+  -  2.uk.pool.ntp.org
+name_server: '10.9.100.32'

@@ -1,0 +1,13 @@
+!
+hostname {{ hostname }}
+!
+ip name-server vrf {{ mgmt_vrf }} {{ name_server }}
+!
+{% for n in ntp_servers -%}
+ntp server vrf {{ mgmt_vrf }} {{ n }}
+{% endfor %}
+!
+spanning-tree mode mstp
+!
+no aaa root
+!
