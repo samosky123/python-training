@@ -1,8 +1,0 @@
-eos_connection:
-  host: "{{ inventory_hostname }}"
-  username: admin
-  password: admin
-  transport: eapi
-  validate_certs: false
-
-eos_replace: line

@@ -1,6 +1,0 @@
----
-- name: Apply ARISTA_BASIC configuration
-  eos_config:
-    src: ARISTA_BASIC.j2
-    provider: '{{ eos_connection }}'
-    replace: '{{ eos_replace }}'

@@ -1,6 +1,0 @@
----
-- hosts: arista
-  connection: local
-  gather_facts: no
-  roles:
-    - role: arista_basic
