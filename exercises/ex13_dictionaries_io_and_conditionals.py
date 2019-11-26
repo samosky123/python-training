@@ -47,5 +47,5 @@ with open('show_interface_small.txt', 'r') as f:
 
 #print interface_stats
 
-for interface,stats in interface_stats.iteritems():
+for interface,stats in interface_stats.items():
     print(interface, 'STATE:', stats['state'], 'IN_PKTS:', stats['in_pkts'])

@@ -1,20 +1,14 @@
 import argparse
 import sys
 
-
-def args_parser():
+def main():
 
     parser = argparse.ArgumentParser(description="Network info script.")
     parser.add_argument("-device", help="Hostname or IP address of the target device.")
     parser.add_argument("-op", help="Operation to perform.", choices=['precheck', 'postcheck'])
     parser.add_argument("-v", "-verbose", help="increase output verbosity.", action="store_true")
 
-    return parser.parse_args()
-
-
-def func():
-
-    args = args_parser()
+    args = parser.parse_args()
     
     if not args.device or not args.op:
         print('ERROR: Device and Operation must be provided')
@@ -29,7 +23,7 @@ def func():
     print('Processing Device: {0}, Operation: {1}'.format(str(args.device), args.op))
 
 if __name__ == '__main__':
-    func()
+    main()
 
 # Exercise:
 # - add option of list of devices (file name)
