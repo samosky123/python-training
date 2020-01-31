@@ -11,6 +11,3 @@ if hostname.startswith('sw'):
         os.makedirs(new_path)
 else:
     sys.exit('Hostname has to start with "sw"')
-
-
-
